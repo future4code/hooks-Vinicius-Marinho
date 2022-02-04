@@ -1,0 +1,10 @@
+1.  Pizza
+2.  Hamburguer
+3.  Salpicão
+4.  Lasanha
+5.  Strogonof
+6.  Churrascos
+7.  Pastel
+8.  Coxinha
+9.  Churros
+10. Chocolate

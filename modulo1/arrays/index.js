@@ -44,7 +44,7 @@ Qual será o valor impresso no console se a entrada do usuário for: "Subi num �
 SUBI NUM ÔNIBUS EM MIRROCOS  27
 
 */
-/*
+
 // 1. Faça um programa que pergunte ao usuário seu nome e seu e-mail. Em seguida, Imprima no console a seguinte mensagem:
     
  //   O e-mail `emailDoUsuario` foi cadastrado com sucesso. Seja bem-vinda(o), `nomeDoUsuario`!
@@ -88,7 +88,7 @@ SUBI NUM ÔNIBUS EM MIRROCOS  27
     
     console.log(array)
 
-    */
+
 
 // 3. Faça um programa, seguindo os passos:
     

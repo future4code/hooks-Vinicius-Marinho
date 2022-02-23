@@ -204,11 +204,41 @@ function imrprimir() {
 
 imrprimir()
 
-//
+// 2. Crie uma função que receba dois objetos que representam filmes. 
+//Eles devem ter as propriedades: ano de lançamento e nome. A função deve retornar uma mensagem no seguinte modelo:
 
+const filme1 ={
+    nome: "A Volta Dos Que Não Foram",
+    anoLançamento: 1991
+}
 
+const filme2 ={
+    nome: "Poeira Em Alto Mar",
+    anoLançamento: 1993
+}
 
+function comparaFilmes() {
+   const idadeFilme = filme1.anoLançamento < filme2.anoLançamento
+   return idadeFilme
+}
+console.log(comparaFilmes())
 
+// 3. Crie uma função a mais pro exercício 3 de escrita de código. 
+// Essa função vai auxiliar o controle de estoque do sacolão: 
+// ela deve receber por parâmetro uma das frutas e retornar esse mesmo objeto com a propriedade disponibilidade 
+// com o valor invertido. 
+
+function controleEstoque(objeto){
+    return objeto.disponibilidade = false
+}
+
+controleEstoque(fruta1)
+controleEstoque(fruta2)
+controleEstoque(fruta3)
+
+console.log(fruta1)
+console.log(fruta2)
+console.log(fruta3)
 
 
 

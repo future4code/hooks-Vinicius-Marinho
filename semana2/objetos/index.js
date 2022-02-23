@@ -25,20 +25,20 @@
 //          canal: "Globo", horario: "14h"
 
 // 2. Leia o código abaixo
-    
-    // const cachorro = {
-    // 	nome: "Juca", 
-    // 	idade: 3, 
-    // 	raca: "SRD"
-    // }
-    
-    // const gato = {...cachorro, nome: "Juba"}
-    
-    // const tartaruga = {...gato, nome: gato.nome.replaceAll("a", "o")}
-    
-    // console.log(cachorro)
-    // console.log(gato)
-    // console.log(tartaruga)
+
+// const cachorro = {
+// 	nome: "Juca", 
+// 	idade: 3, 
+// 	raca: "SRD"
+// }
+
+// const gato = {...cachorro, nome: "Juba"}
+
+// const tartaruga = {...gato, nome: gato.nome.replaceAll("a", "o")}
+
+// console.log(cachorro)
+// console.log(gato)
+// console.log(tartaruga)
 
 
 //     a) O que vai ser impresso no console?
@@ -49,35 +49,35 @@
 
 //      {nome: "Juco", 	idade: 3, raca: "SRD"}
 
-    
+
 //     b) O que faz a sintaxe dos três pontos antes do nome de um objeto?
 
-            // Copia todas as informações do objeto.
+// Copia todas as informações do objeto.
 
 
 
 // 3. Leia o código abaixo
-    
+
 
 // function minhaFuncao(objeto, propriedade) {
 // return objeto[propriedade]
 // }
-            
+
 // const pessoa = {
 // nome: "Caio", 
 // idade: 23, 
 // backender: false
 // }
-            
+
 // console.log(minhaFuncao(pessoa, "backender"))
 // console.log(minhaFuncao(pessoa, "altura"))
 
-            
+
 // a) O que vai ser impresso no console?
 
 //  false
 //  undefined
-            
+
 // b) Explique o valor impresso no console. Você sabe por que isso aconteceu?
 
 // No primeiro console.log ele busca o valor da proprieda backender. já no segundo ele busca tbm, porém como ela não foi
@@ -89,7 +89,7 @@
 // EXERCICIOS DE ESCRITA
 
 // 1. 1. Resolva os passos a seguir: 
-    
+
 //    a) Crie um objeto. Ele deve conter duas propriedades: nome (string) e apelidos (um array que sempre terá exatamente **três apelidos**).
 // Depois, escreva uma função que recebe como entrada um objeto e imprime uma mensagem no modelo abaixo**:**
 
@@ -99,11 +99,7 @@ const pessoa = {
 }
 
 function imprime(objeto) {
-    
-    const novaPessoa = {
-        ...objeto
-    }
-    
+
     console.log(`Eu sou ${objeto.nome}, mas pode me chamar de ${objeto.apelidos[0]}, ${objeto.apelidos[1]} ou ${objeto.apelidos[2]}`)
 }
 
@@ -114,7 +110,7 @@ imprime(pessoa)
 // mas com uma nova lista de três apelidos. Depois, chame a função feita no item anterior passando como argumento o novo objeto
 
 
-const pessoa2 ={
+const pessoa2 = {
     ...pessoa,
     apelidos: ["Linda", "Maravilhosa", "Perfeita"]
 }
@@ -122,21 +118,19 @@ const pessoa2 ={
 imprime(pessoa2)
 
 // 2. Resolva os passos a seguir: 
-    
+
 //     a) Crie dois objetos diferentes com as seguintes propriedades: nome, idade e profissão. 
-    
+
 const pessoa3 = {
     nome: "Vinicius",
     idade: 30,
     profissao: "Estudannte"
 }
-
 const pessoa4 = {
     nome: "Larissa",
     idade: 29,
     profissao: "Fiscal"
 }
-
 //     b) Escreva uma função que receba esses objetos e retorne um array com as seguintes informações:
 //     1. O valor de `nome`
 //     2. O numero de caracteres do valor `nome`
@@ -145,72 +139,72 @@ const pessoa4 = {
 //     5. O numero de caracteres do valor `profissão`
 
 function retronaArray(objeto) {
-    const pessoa ={
-        ...objeto,
-    }
-
-    
-
-
-    const array = [pessoa.nome, pessoa.idade, pessoa.profissao]
+   
+    const array = [objeto.nome, objeto.idade, objeto.profissao]
     const tamanhoNome = array[0].length
     const tamanhoProfissao = array[2].length
 
     const array2 = [array[0], tamanhoNome, array[1], array[2], tamanhoProfissao]
 
     console.log(array2)
-   
 }
-
-
+retronaArray(pessoa3)
 retronaArray(pessoa4)
 
-
 // 3. Resolva os passos a seguir: 
-    
+
 //     a) Crie uma variável de escopo global que guarde um `array` vazio chamada `carrinho`
 
 const carrinho = []
-    
-//     b) Crie três novos objetos que representem frutas de um sacolão. Eles devem ter as seguintes propriedades: nome (`string`) e
-//      disponibilidade (`boolean` - devem começar como `true`)
-
+//     b) Crie três novos objetos que representem frutas de um sacolão. Eles devem ter as seguintes propriedades: nome (`string`) e disponibilidade (`boolean` - devem começar como `true`)
 const fruta1 = {
     nome: "banana",
     disponibilidade: true
 }
-
 const fruta2 = {
     nome: "mamao",
     disponibilidade: true
 }
-
 const fruta3 = {
     nome: "uva",
     disponibilidade: true
 }
-    
-//     c) Crie uma função que **receba** um objeto fruta por **parâmetro** e coloque-a dentro do array de `carrinho`. 
-//     Invoque essa função passando os três objetos criados.
+//     c) Crie uma função que **receba** um objeto fruta por **parâmetro** e coloque-a dentro do array de `carrinho`. Invoque essa função passando os três objetos criados.
+function compras(objeto) {
 
-function compras(objeto, objeto1, objeto2) {
-
-    const frutas ={
-        ...objeto,
-        ...objeto1,
-        ...objeto2
-    }
-
-    carrinho.push(objeto.nome, objeto1.nome, objeto2.nome)
+    carrinho.push(objeto)
 
 }
-    
-compras(fruta1, fruta2, fruta3)
-
+compras(fruta1)
+compras(fruta2)
+compras(fruta3)
 //     d) Imprima a variável carrinho e garanta que ela agora seja um array preenchido com três objetos. 
-
 console.log(carrinho)
 
+
+
+// DESAFIOS
+
+// 1. Crie uma função que pergunte ao usuário seu nome, sua idade e sua profissão e depois imprima no console um objeto 
+//com essas propriedades. Depois de imprimir o novo objeto, imprima também o tipo dele para garantir que é um objeto.
+
+function imrprimir() {
+    const nome = prompt("Digite seu nome:")
+    const idade = Number(prompt("Digite sua idade:"))
+    const profissao = prompt("Digite sua profissao:")
+
+    const novoObjeto = {
+        nome: nome,
+        idade: idade,
+        profissao: profissao
+    }
+
+    console.log(novoObjeto)
+}
+
+imrprimir()
+
+//
 
 
 

@@ -92,52 +92,62 @@ let menorNumero = 10000
 
 //     a) Escreva um programa que **imprime** cada um dos valores do array original.
 
-    for(let item of arrayOriginal){
+function imprimeLista(array){
+    for(let item of array){
         console.log(item)
     }
+}
+imprimeLista(arrayOriginal)
     
 //     b) Escreva um programa que **imprime** cada um dos valores do array original divididos por 10
 
-
-    for(let item of arrayOriginal){
+function divideLista(array){
+    for(let item of array){
      
      numeroDividido = item /10
         console.log(numeroDividido)
     }
+}
 
+divideLista(arrayOriginal)
+    
 //     c) Escreva um programa que **crie** um novo array contendo, somente, os números pares do array original e **imprima** esse novo array
 
-
-    for(let item of arrayOriginal){
+function listaPares(array){
+    for(let item of array){
         if((item % 2) === 0) {
             arrayPares.push(item)
         }
     }
+}
+listaPares(arrayOriginal)
 console.log(arrayPares)
     
 //     d) Escreva um programa que **crie** um novo array contendo strings, da seguinte forma: "O elemento do índex `i` é: `numero`". Depois, **imprima**
 //      este novo array.
     
 
-
-    for(let item of arrayOriginal){
+function criaArraySting(array){
+    for(let item of array){
         i = arrayOriginal.indexOf(item)
         arrayStrings.push("o elemento do index " + i + " é: " + item )
     }
-
+}
+criaArraySting(arrayOriginal)
 console.log(arrayStrings)
 
 //     e) Escreva um programa que imprima no console o maior e o menor números contidos no array original
 
-
-    for(let item of arrayOriginal){
+function comparaNumero(array){
+    for(let item of array){
         if (maiorNumero < item){
             maiorNumero = item
         } else if (menorNumero > item){
             menorNumero = item
         }
     }
-
+}
+comparaNumero(arrayOriginal)
 console.log(`O maior número é ${maiorNumero} e o menor número é ${menorNumero}`)
     
 

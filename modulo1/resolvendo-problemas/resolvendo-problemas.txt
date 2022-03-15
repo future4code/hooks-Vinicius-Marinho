@@ -1,0 +1,30 @@
+Os 7 passos fundamentais para resolução de problemas sao:
+
+1. atenção ao que pede o enunciado
+
+	Nos ajuda a fazer somente o que peder no enunciado e não nos perdermos fazendo coisas alem do que é pedido.
+
+2. retirar informações importantes no enunciado
+
+	Nos ajuda a retirar nomes de variaveis, funções, etc...
+
+3.pensar em entradas e saidas
+
+	Nos ajuda a organizar quais os dados serão usados como parametros e quais os resultados esperados
+
+4. Fazer um esquema virtual do nosso codigo
+
+	Ajuda a vizualizar mais claramente um esboço do nosso codigo e o que precisaremos usar para ele funcionar
+
+5. Criar um código feio
+
+	Nessa etapa o importante é conseguir escrever uma primeira versao do codigo
+
+6. Testar o codigo
+
+	Nos permite ver o que funciona e onde temos que fazer alterações
+
+7. Refatorar
+
+
+	Organizar o codigo finalizando e deixando ele o mais claro e simples possivel. 

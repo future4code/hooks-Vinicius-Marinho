@@ -103,13 +103,18 @@ function retornaNPrimeirosPares(n) {
    for(let i =0; i<n; i+2){
       primeirosPares.push(i)
    }
-   
-
-   
+      
 }
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
+   if(ladoA === ladoB && ladoB === ladoC){
+      return "Equilátero"
+   } else if(ladoA === ladoB || ladoA === ladoC || ladoB === ladoC){
+      return "Isósceles"
+   } else {
+      return "Escaleno"
+   }
 
 }
 

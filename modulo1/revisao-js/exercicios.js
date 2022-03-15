@@ -25,6 +25,12 @@ function retornaArrayOrdenado(array) {
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
   
+   const numeroPares = array.filter((numeros, indice, lista) => {
+      if (numeros % 2 === 0){
+         return numeros
+      }
+   })
+  return numeroPares
 }
 
 // EXERCÍCIO 05

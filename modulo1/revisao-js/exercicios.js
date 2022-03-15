@@ -175,12 +175,22 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
 
+
+   
 }
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
-}
+
+   consultas.sort(function(a, b) {
+      if(a.nome < b.nome) {
+        return -1;
+      } else {
+        return true;
+      }
+    })
+    return consultas
+   }
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {

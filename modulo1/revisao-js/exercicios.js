@@ -25,7 +25,7 @@ function retornaArrayOrdenado(array) {
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
   
-   const numeroPares = array.filter((numeros, indice, lista) => {
+   const numeroPares = array.filter((numeros) => {
       if (numeros % 2 === 0){
          return numeros
       }
@@ -35,7 +35,16 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
+   const numeroPares = array.filter((numeros) => {
+      if (numeros % 2 === 0){
+         return numeros
+      }
+   })
+
+   const numerosParesQuadrados = numeroPares.map((numeros) =>{
+      return numeros*numeros
+   })
+   return numerosParesQuadrados
 }
 
 // EXERCÍCIO 06

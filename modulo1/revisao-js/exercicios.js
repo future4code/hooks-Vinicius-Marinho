@@ -175,8 +175,24 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
 
-
+   let totalCompras = 0
+   for (let conta of contas){
+     
+saldoAtual = conta.saldoTotal
+         for(let compra of conta.compras){
+               totalCompras = totalCompras + compra
+         }
+   conta = {
+      ...conta,
+      saldoTotal: saldoAtual - totalCompras ,
+      compras: []
+   }
+      totalCompras = 0
+     
+   contas.push(conta)   
+}   
    
+   return contas
 }
 
 // EXERCÍCIO 15A
@@ -194,5 +210,7 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
+
+
    
 }

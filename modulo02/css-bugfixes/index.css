@@ -55,7 +55,7 @@ div>p:first-child {
 }
 
 .icone {
-    height: 20px;
+    height: 15px;
     max-width:20px;
     max-height:20px;
     width: auto;
@@ -120,7 +120,7 @@ td button {
 
 
 #back-button {
-    background-color: white;
+    background-color: gray;
     width: 100px;
     height: 20px;
     border: 1px solid black;
@@ -130,7 +130,10 @@ td button {
 }
 
 #back-button:hover {
-    background-color: #635a3d
+    background-color:dimgray
+}
+#back-button:active{
+    color: white;
 }
 
 .alinhar{
@@ -142,4 +145,13 @@ td button {
         max-height:50px;
         width: auto;
         height: auto;
-    }
+}
+
+
+button:active{
+    color:white
+}
+
+button:hover{
+ background-color:#c44f00;
+}

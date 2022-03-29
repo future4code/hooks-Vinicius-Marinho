@@ -110,6 +110,7 @@ div:last-child {
 
 table {
     width: 60%;
+    margin: auto;
 }
 
 td button {
@@ -134,6 +135,8 @@ td button {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    text-align: center;
+    
 }
 
 #back-button:hover {
@@ -166,3 +169,4 @@ button:hover{
 body{
     font-family: "Roboto";
 }
+

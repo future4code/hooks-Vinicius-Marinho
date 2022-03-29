@@ -130,3 +130,7 @@ td button {
 #back-button:hover {
     background-color: #635a3d
 }
+
+.alinhar{
+    text-align: center;
+}

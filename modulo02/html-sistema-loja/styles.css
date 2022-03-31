@@ -1,0 +1,56 @@
+a{
+        color: white;
+        margin: 5px;
+}
+
+body{
+    background-color: cornflowerblue;
+}
+
+.tamanho-imagem{
+    max-width:200px;
+    max-height:200px;
+    width: auto;
+    height: auto;
+}
+
+.tamanho-imagem1{
+    max-width:30px;
+    max-height:30px;
+    width: auto;
+    height: auto;
+}
+
+td{
+    background-color: white;
+    color: cornflowerblue;
+}
+h1{
+    color: white;
+}
+
+div{
+    color: whitesmoke;
+}
+
+ul{
+    color: whitesmoke;
+    margin:4px;
+}
+h2{
+    color: white;
+}
+
+th{
+    color: whitesmoke;
+}
+footer{
+    color: whitesmoke;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: blueviolet;
+    text-align: center;
+}
+

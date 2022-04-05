@@ -1,0 +1,60 @@
+
+header{
+    background-color: mediumvioletred;
+    padding: 10px;
+    
+}
+
+.div1{
+    background-color: #f2d0e0;
+    width: 10%;
+    height: 500px;
+  
+}
+
+footer{
+    background-color: mediumvioletred;
+    padding: 5px;
+    text-align: center;
+    
+}
+
+.tamanhoImagem{
+    height: 15px;
+    width: 15px;
+    padding: 0 10px;
+}
+
+.tamanhoImagem1{
+    height: 15px;
+    width: 15px;
+}
+
+.tamanhoImagem2{
+    height: 15px;
+    width: 15px;
+}
+
+.tamanhoImagem3{
+    height: 150px;
+    width: 150px;
+    text-align: end;
+}
+
+.topPagina{
+    display: inline; ;
+    
+}
+
+.botaoFinal{
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    align-items: flex-end;
+}
+
+.div2{
+    
+    display: flex;
+    flex-direction:row;
+}

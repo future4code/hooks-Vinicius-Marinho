@@ -1,0 +1,47 @@
+header{
+    background-color: blueviolet;
+    color: white;
+}
+
+footer{
+    background-color: blueviolet;
+    color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+input{
+    background-color: white;
+    color: gray;
+    position: relative;
+    left: 1170px;
+    bottom: 25px;
+    
+}
+
+h1{
+    position: relative;
+    top: 20px;
+}
+
+.div{
+    display: grid;
+    grid-template-rows: 150px 30px 150px 30px;
+    grid-template-columns: 200px 200px 200px 200px;
+    row-gap: 5px;
+    column-gap: 5px;
+   
+
+}
+.tamanhoImagem{
+    height: 150px;
+    width: 200px;
+}
+
+p{
+    text-align: center;
+}
+

@@ -47,14 +47,19 @@ footer{
 }
 
 .botaoFinal{
-    display: flex;
-    flex-direction: row;
-    align-self: flex-end;
-    align-items: flex-end;
+    position: relative;
+    left: 1100px
 }
 
 .div2{
+    display: grid;
+    grid-template-rows: 150px 150px 150px;
+    grid-template-columns: 150px 150px 150px;
+    row-gap: 50px;
+    column-gap: 50px;
     
-    display: flex;
-    flex-direction:row;
 }
+.inline{
+    display: inline;
+}
+

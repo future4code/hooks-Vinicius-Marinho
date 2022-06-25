@@ -1,37 +1,28 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import useForm from "../hooks/useForm"
 
 const LoginPage = () => {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const navigate = useNavigate()
+    const navigate=useNavigate()
+   
+    const {form, onChange, cleanFields} = useForm({email: "", password: ""})
 
-    const onChangeEmail = (event) => {
-        setEmail(event.target.value)
+    const onClickBack =()=>{
+    navigate("/")
     }
 
-    const onChangePassword = (event) => {
-        setPassword(event.target.value)
-    }
-
-    const onClickBack = () => {
-        navigate("/")
-    }
-
-    const onSubmitLogin = () =>{
+    const onSubmitLogin = (event) =>{
+        event.preventDefault()
+        
         const url = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/vinicius-marinho-hooks/login"
     
-        const body = {
-            email: email,
-            password: password
-        }
-
         axios
-            .post(url,body)
+            .post(url,form)
             .then((res) => {
                 localStorage.setItem("token", res.data.token)
                 navigate("/admin/trips/list")
+                cleanFields()
             })
             .catch((err) => alert   (err.response.data.message))
     
@@ -40,22 +31,28 @@ const LoginPage = () => {
         <div>
             <div>
                 <h2>Login</h2>
+                <form onSubmit={onSubmitLogin}>
+                    <input
+                        placeholder="email"
+                        type="email"
+                        value={form.email}
+                        onChange={onChange}
+                        name="email"
+                        required
+                    />
 
-                <input
-                    placeholder="email"
-                    type="email"
-                    value={email}
-                    onChange={onChangeEmail}
-                />
+                    <input
+                        placeholder="password"
+                        type="password"
+                        value={form.password}
+                        onChange={onChange}
+                        name="password"
+                        required
+                    />
 
-                <input
-                    placeholder="password"
-                    type="password"
-                    value={password}
-                    onChange={onChangePassword}
-                />
-
-                <button onClick={onSubmitLogin}>Entrar</button>
+                    <button>Entrar</button>
+                </form>
+                
             </div>
             <div>
                 <button onClick={onClickBack}>voltar</button>

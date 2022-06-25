@@ -1,7 +1,9 @@
-import axios from "axios"
+import useListTrips from "../hooks/useListTrips"
 import { useNavigate } from "react-router-dom"
 
 const ListTripsPage = () => {
+    
+    const {tripsName, tripsComponent} = useListTrips()
 
     const navigate = useNavigate()
 
@@ -13,22 +15,12 @@ const ListTripsPage = () => {
         navigate("/trips/application")
     }
 
-    const url = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/vinicius-marinho-hooks/trips"
-
-    axios
-        .get(url)
-        .then((res) => {
-            console.log(res.data.trips)
-        })
-        .catch((err) => console.log(err))
-
-   
-
     return(
         <div>
             <button onClick={onClickBack}>Voltar</button>
             <button onClick={onClickApplication}>Increver-se</button>
-           <p>ListTripsPage</p>
+            <h1>Lista de Viagens</h1>
+            {tripsComponent}
         </div>
     )
 }

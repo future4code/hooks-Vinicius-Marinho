@@ -14,20 +14,27 @@ app.get("/ping", ( req: Request,res:Response)=>{
 })
 
 app.get("/toDo", (req:Request, res: Response)=>{
-    const toDoStatus = req.query.completed
+    try {
+        const toDoStatus = req.query.completed
    
-    let listToDoStatus
-
-    if(toDoStatus === "sim"){
-        listToDoStatus = listTodo.filter((toDo)=>toDo.completed === true)
-
-    } else if( toDoStatus === "não"){
-        listToDoStatus= listTodo.filter((toDo)=>toDo.completed === false)
-    } else{
-        listToDoStatus = "Tarefa completa? sim ou não"
+        let listToDoStatus
+    
+        if(toDoStatus === "sim"){
+            listToDoStatus = listTodo.filter((toDo)=>toDo.completed === true)
+    
+        } else if( toDoStatus === "não"){
+            listToDoStatus= listTodo.filter((toDo)=>toDo.completed === false)
+        } else{
+            listToDoStatus = "Tarefa completa? sim ou não"
+        }
+    
+        res.send(listToDoStatus)
+    } catch (error:any) {
+        res.send(error.mensage)
+        
     }
-
-    res.send(listToDoStatus)
+    
+   
 })
 
 app.post("/toDo/Create/:userId" , (req: Request , res: Response) => {
@@ -41,12 +48,9 @@ app.post("/toDo/Create/:userId" , (req: Request , res: Response) => {
 
         if(completed === "sim"){
         booleanCompleted = true
-
         } else ( completed === "não")
             booleanCompleted= false
         
-
-
         const toDoAtualizado = {
             userId: userId,
             id: generateId(),
@@ -63,20 +67,25 @@ app.post("/toDo/Create/:userId" , (req: Request , res: Response) => {
     }
 })
 
-app.get("/toDo/edit/:title",(req: Request, res: Response)=>{
-    
-    const editToDo = req.params.title
-    const toDo = listTodo.find(toDo => toDo.title === editToDo)
+app.put("/toDo/edit/:title",(req: Request, res: Response)=>{
+    try {
+        const editToDo = req.params.title
+        const toDo = listTodo.find(toDo => toDo.title === editToDo)
 
-    if (!toDo) throw new Error("Tarefa não encontrada")
+        if (!toDo) throw new Error("Tarefa não encontrada")
 
-    if(toDo.completed === true){
-        toDo.completed = false
-    } else {
-        toDo.completed = true
+        if(toDo.completed === true){
+            toDo.completed = false
+        } else {
+            toDo.completed = true
+        }
+        
+        res.send(toDo)
+        
+    } catch (error:any) {
+        res.send(error.message)
     }
     
-    res.send(toDo)
 })
 
 app.delete("/toDo/del/:id",(req: Request, res: Response)=>{
@@ -99,8 +108,6 @@ app.get("/toDo/search/:userId", (req: Request, res: Response)=>{
         const selectedUser = listTodo.filter((toDo)=>toDo.userId === userId) 
         
         const others =listTodo.filter((toDo)=>toDo.userId !== userId) 
-
-        const todos = {}
 
         const listTodosAll = {todos :{selectedUser,others}}
 

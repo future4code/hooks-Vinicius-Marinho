@@ -182,8 +182,7 @@ app.post("/account/transfer",(req: Request, res: Response)=>{
     }
 
     userOrigem.extrato.push({valor, data: new Date().toLocaleDateString(), descrição: "Pagamento de conta."})
-    console.log(userOrigem)
-
+    
     if(valor > userOrigem.saldo){
         errorCode = 401
         throw new Error ("Saldo insuficiente.")
@@ -199,7 +198,6 @@ app.post("/account/transfer",(req: Request, res: Response)=>{
     
     userDestino.extrato.push({valor, data: new Date().toLocaleDateString(), descrição: "Deposito de dinheiro."})
     
-    console.log(userDestino)
     res.status(201).send("ok")
 
     } catch (error:any) {

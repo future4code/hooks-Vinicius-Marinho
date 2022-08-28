@@ -257,9 +257,11 @@ app.put("/account/addValor",(req: Request, res: Response)=>{
     catch (error:any) {
         res.status(errorCode).send(error.message)
 
+
     }
     
 })
+
 
 app.put("/account/saldo/:cpf",(req: Request, res: Response)=>{
     let errorCode = 400  
@@ -317,6 +319,7 @@ app.put("/account/saldo/:cpf",(req: Request, res: Response)=>{
     
 })
 
+
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
        const address = server.address() as AddressInfo;
@@ -324,4 +327,6 @@ const server = app.listen(process.env.PORT || 3003, () => {
     } else {
        console.error(`Failure upon starting server.`);
     }
+
 });
+

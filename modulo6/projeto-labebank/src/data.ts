@@ -1,3 +1,4 @@
+
 export type Transação = {
     valor: number,
     data:  string,
@@ -55,3 +56,4 @@ export const arrayUsers:User[] = [{
     extrato: [{valor: 0, data: "24/08/2022", descrição: "Depósito de dinheiro"}]
 },
 ]
+

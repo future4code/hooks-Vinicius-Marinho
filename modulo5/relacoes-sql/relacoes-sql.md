@@ -69,6 +69,6 @@ a)ON, determina se as colunas são iguais.
 
 b)a query é:
 ```
- SELECT m.id as movie_id, r.rate as rating FROM Movie as m
+ SELECT m.title, m.id as movie_id, r.rate as rating FROM Movie as m
 JOIN Rating as r ON m.id = r.movie_id;
 ```

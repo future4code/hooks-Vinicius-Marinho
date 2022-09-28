@@ -11,9 +11,9 @@ app.use(cors());
 app.get("/user/all", async (req: Request, res: Response)=>{
   let errorCode = 400
   try {
-
     const user = await connection.raw(`
         SELECT id,nickname FROM TodoListUser
+
     `)
 
     res.status(200).send(user[0])
@@ -22,6 +22,7 @@ app.get("/user/all", async (req: Request, res: Response)=>{
     res.status(errorCode).send(error.message)
   }
 })
+
 
 app.get("/user/:id", async (req: Request , res: Response) => {
   let errorCode = 400
@@ -41,6 +42,7 @@ app.get("/user/:id", async (req: Request , res: Response) => {
     errorCode = 406
     throw new Error("Usuario não encontrado")
   }
+
 
     res.status(200).send(user[0])
 
@@ -91,7 +93,6 @@ app.get("/task/id", async (req: Request, res: Response)=>{
       throw new Error("Digite o id de um usuário.")
     }
 
-
     const task = await connection.raw(`
       SELECT 
       t.id,
@@ -103,6 +104,7 @@ app.get("/task/id", async (req: Request, res: Response)=>{
       u.nickname as creator_user_nickname
       FROM TodoListUser as u JOIN TodoListTask as t ON t.creator_user_id = u.id
       WHERE t.creator_user_id = "${id}"
+
     `)
 
     res.status(200).send(task[0])
@@ -113,6 +115,7 @@ app.get("/task/id", async (req: Request, res: Response)=>{
 })
 
 app.get("/task/:id", async (req: Request , res: Response) => {
+
   let errorCode = 400
   try {
     const id = req.params.id
@@ -159,9 +162,11 @@ app.get("/task/:id", async (req: Request , res: Response) => {
 
   res.status(200).send(show)
 
+
   } catch (error) {
     res.status(errorCode).send(error.message)
   }
+
 });
 
 app.get("/user", async (req: Request, res: Response)=>{
@@ -180,13 +185,13 @@ app.get("/user", async (req: Request, res: Response)=>{
       WHERE nickname LIKE "%${search}%" OR email LIKE "%${search}%"
     `)
 
-
     res.status(200).send(user[0])
 
   } catch (error) {
     res.status(errorCode).send(error.message)
   }
 })
+
 
 app.get("/task/:id/responsible", async (req: Request , res: Response) => {
   let errorCode = 400
@@ -316,6 +321,7 @@ app.post("/task", async (req: Request , res: Response) => {
   } catch (error: any) {
       res.status(errorCode).send(error.message)
   }
+
 })
 
 app.post("/task/responsible", async (req: Request, res:Response)=>{
@@ -368,6 +374,7 @@ app.put("/user/edit/:id", async (req: Request , res: Response) => {
     }
 
     const user = await connection.raw(`
+
        SELECT * FROM TodoListUser
        WHERE id = "${id}";
     `)
@@ -424,20 +431,6 @@ app.put("/task/status/:id/", async (req: Request, res: Response)=>{
   } catch (error) {
       res.status(errorCode).send(error.message)
   }
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 app.listen(process.env.PORT || 3003, () => {
   console.log(`Servidor rodando na porta ${process.env.PORT || 3003}`)

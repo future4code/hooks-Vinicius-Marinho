@@ -1,0 +1,15 @@
+POST http://localhost:3003/createUser
+Content-Type: application/json
+
+{
+	"name": "Vinicius Marinho",
+	"email": "vini@dundermifflin.com",
+	"password": "123456"	
+}
+
+###
+GET http://localhost:3003/all
+Content-Type: application/json
+
+###
+DELETE http://localhost:3003/2572d01a-44c9-4f44-83eb-520b1af8f7f1

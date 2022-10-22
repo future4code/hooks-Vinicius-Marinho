@@ -1,0 +1,36 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "Antonio",
+    "email": "toninho@email.com",
+    "password": "28647913"
+}
+
+###
+GET http://localhost:3003/user/get
+Content-Type: application/json
+
+{
+    "name":""
+}
+
+###
+POST http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title":  "Poeira em alto mar",
+    "description": "filme de um navio empoeirado que estava sempre no mar.",
+    "duration_in_minutes": 190,
+    "year_of_release": 1987
+}
+
+###
+GET http://localhost:3003/movie/get
+Content-Type: application/json
+
+{
+    "title":"poeira"
+}
+

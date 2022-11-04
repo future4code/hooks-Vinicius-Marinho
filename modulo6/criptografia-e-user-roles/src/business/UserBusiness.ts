@@ -1,8 +1,7 @@
-import { UserRoles } from './../model/user';
 import { HashManager } from './../services/HashManager';
 import { UserDatabase } from "../data/UserDatabase";
 import { CustomError, InvalidEmail, InvalidName, InvalidPassword, Unauthorized, UserNotFound } from "../error/customError";
-import { UserInputDTO, user, EditUserInputDTO, EditUserInput, LoginInputDTO,} from "../model/user";
+import { UserInputDTO, user, EditUserInputDTO, EditUserInput, LoginInputDTO,UserRoles} from "../model/user";
 import { IdGenerator } from "../services/IdGenerator";
 import { TokenGenerator } from "../services/TokenGenerator";
 
@@ -14,8 +13,7 @@ const hashManager = new HashManager()
 export class UserBusiness {
   public createUser = async (input: UserInputDTO): Promise<string> => {
     try {
-      const { name, nickname, email, password,role
-       } = input;
+      const { name, nickname, email, password,role } = input;
 
       if (!name || !nickname || !email || !password) {
         throw new CustomError(
@@ -37,19 +35,20 @@ export class UserBusiness {
       }
 
       const id: string = idGenerator.generateId()
-      const cypherPassword = await hashManager.hash(password)
+
+      const hashPassword = await hashManager.hash(password)
 
       const user: user = {
         id,
         name,
         nickname,
         email,
-        password: cypherPassword,
+        password: hashPassword,
         role: UserRoles[role],
       };
    
       await userDatabase.insertUser(user);
-      const token = tokenGenerator.generateToken(id)
+      const token = tokenGenerator.generateToken(id, user.role)
 
       return token
     } catch (error: any) {
@@ -62,10 +61,7 @@ export class UserBusiness {
       const { email, password } = input;
     
       if (!email || !password) {
-        throw new CustomError(
-          400,
-          'Preencha os campos"email" e "password"'
-        );
+        throw new CustomError(400,'Preencha os campos"email" e "password"');
       }
 
       if (!email.includes("@")) {

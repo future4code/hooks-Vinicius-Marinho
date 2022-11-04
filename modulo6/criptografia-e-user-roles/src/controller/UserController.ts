@@ -59,11 +59,5 @@ export class UserController {
         } catch (error: any) {
           res.status(400).send(error.message);
         }
-      }; 
-
-      
- 
-
-
-
+      };  
 }

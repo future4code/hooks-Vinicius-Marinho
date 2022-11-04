@@ -39,5 +39,6 @@ export interface EditUserInput {
 }
 
 export interface AuthenticationData {
-   id: string
+   id: string,
+   role: string
 }

@@ -1,0 +1,16 @@
+-- Active: 1663287971562@@35.226.146.116@3306@hooks-4313661-vinicius-marinho
+
+CREATE TABLE IF NOT EXISTS Cookenu_users (
+    id VARCHAR(64) PRIMARY KEY,
+    name VARCHAR(64) NOT NULL,
+    email VARCHAR(64) NOT NULL,
+    password VARCHAR(64) NOT NULL,
+    role VARCHAR(64) NOT NULL DEFAULT "NORMAL"
+);
+
+CREATE TABLE IF NOT EXISTS Cookenu_revenues (
+    id VARCHAR(64) PRIMARY KEY,
+    title VARCHAR(64) NOT NULL,
+    description VARCHAR(255) NOT NULL,
+    date DATE NOT NULL
+);
